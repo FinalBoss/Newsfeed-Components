@@ -113,7 +113,7 @@ const data = [
 
 */
 
-function somePanel(data){
+function somePanel(obj){
 
   //create some elements
 
@@ -134,13 +134,38 @@ function somePanel(data){
   article.appendChild(paragraph3);
   article.appendChild(articleButton);
 
-  //Set ClassNames
 
-  article.classList.add('article');
-  paraDate.classList.add('date');
-  articleButton.classList.add('expandButton');
+
+  //Set Content
+
+  articleTitle.textContent = obj.title
+  paraDate.textContent = obj.date
+  paragraph1.textContent = obj.firstParagraph
+  paragraph2.textContent = obj.secondParagraph
+  paragraph3.textContent = obj.thirdParagraph
+  articleButton.textContent = "Click Here"
+
+  //add Class
+
+  article.classList.add('header')
+  article.classList.add('articles')
+  article.classList.add('article')
+  articleButton.classList.add('expandButton')
+
+
+  //Event Listener for Button
+
+  articleButton.addEventListener('click', () =>  {document.querySelector('.article').classList.toggle('article-open')})
+
 
   return article
 
 
+
 }
+
+const articles = document.querySelector('.articles');
+
+  data.forEach(element => {
+    articles.appendChild(somePanel(element));
+  })
