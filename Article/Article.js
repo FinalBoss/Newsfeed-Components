@@ -147,8 +147,7 @@ function somePanel(obj){
 
   //add Class
 
-  article.classList.add('header')
-  article.classList.add('articles')
+  article.classList.add('close')
   article.classList.add('article')
   articleButton.classList.add('expandButton')
 
@@ -164,8 +163,12 @@ function somePanel(obj){
 
 }
 
-const articles = document.querySelector('.articles');
+//Iterate the article elements and append them to the page
+
+const art = document.querySelector('.articles');
 
   data.forEach(element => {
-    articles.appendChild(somePanel(element));
+    art.appendChild(somePanel(element));
   })
+
+  
