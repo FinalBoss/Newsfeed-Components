@@ -85,6 +85,17 @@ const data = [
     thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
           Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
+  },
+  {
+    title: 'New Software Developer Brian Clayton has done it again!',
+    date: 'March, 18th, 2020',
+    firstParagraph: `Good News!  This is MVP!! `,
+
+    secondParagraph: `MVP, MVP, MVP, MVP,MVP, MVP, MVP, MVP,MVP, MVP, MVP, MVP,MVP, MVP, MVP, MVP`,
+
+    thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
+          Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
+          Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
   }
 ];
 
@@ -117,6 +128,7 @@ function somePanel(obj){
 
   //create some elements
 
+
   const article = document.createElement('div');
   const articleTitle = document.createElement('h2');
   const articleButton = document.createElement('span');
@@ -133,6 +145,7 @@ function somePanel(obj){
   article.appendChild(paragraph2);
   article.appendChild(paragraph3);
   article.appendChild(articleButton);
+  
 
 
 
@@ -145,16 +158,27 @@ function somePanel(obj){
   paragraph3.textContent = obj.thirdParagraph
   articleButton.textContent = "Click Here"
 
+
   //add Class
 
-  article.classList.add('close')
+  
   article.classList.add('article')
+  articleTitle.classList.add('article')
+  paraDate.classList.add('date')
   articleButton.classList.add('expandButton')
+ 
+
+
 
 
   //Event Listener for Button
 
-  articleButton.addEventListener('click', () =>  {document.querySelector('.article').classList.toggle('article-open')})
+
+articleButton.addEventListener('click', () => {
+
+  article.classList.toggle('article-open')
+
+})
 
 
   return article
