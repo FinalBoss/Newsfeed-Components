@@ -42,7 +42,6 @@ function menuFunc (arr){
 
   const menu = document.createElement('div');
   const menuUl = document.createElement('ul');
-  const menuIl = document.createElement('il');
   
 
   const menuBtn = document.querySelector('img')
@@ -54,14 +53,15 @@ function menuFunc (arr){
  
 menuItems.forEach(function (item) {
 
-  let txt = document.createTextNode(item);
-  menuIl.appendChild(txt);
+  let menuIl = document.createElement('li');
+  menuIl.textContent = item;
+  menuUl.appendChild(menuIl);
   
 });
 
 
 menu.appendChild(menuUl);
-menuUl.appendChild(menuIl);
+// menuUl.appendChild(menuIl);
 
 
 
