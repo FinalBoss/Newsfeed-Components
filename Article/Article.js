@@ -85,6 +85,17 @@ const data = [
     thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
           Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
+  },
+  {
+    title: 'New Software Developer Brian Clayton has done it again!',
+    date: 'March, 18th, 2020',
+    firstParagraph: `Good News!  This is MVP!! `,
+
+    secondParagraph: `MVP, MVP, MVP, MVP,MVP, MVP, MVP, MVP,MVP, MVP, MVP, MVP,MVP, MVP, MVP, MVP`,
+
+    thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
+          Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
+          Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
   }
 ];
 
@@ -112,3 +123,76 @@ const data = [
   Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new article.
 
 */
+
+function somePanel(obj){
+
+  //create some elements
+
+
+  const article = document.createElement('div');
+  const articleTitle = document.createElement('h2');
+  const articleButton = document.createElement('span');
+  const paraDate = document.createElement('p');
+  const paragraph1 = document.createElement('p');
+  const paragraph2 = document.createElement('p');
+  const paragraph3 = document.createElement('p');
+
+  //setup Structure
+
+  article.appendChild(articleTitle);
+  article.appendChild(paraDate);
+  article.appendChild(paragraph1);
+  article.appendChild(paragraph2);
+  article.appendChild(paragraph3);
+  article.appendChild(articleButton);
+  
+
+
+
+  //Set Content
+
+  articleTitle.textContent = obj.title
+  paraDate.textContent = obj.date
+  paragraph1.textContent = obj.firstParagraph
+  paragraph2.textContent = obj.secondParagraph
+  paragraph3.textContent = obj.thirdParagraph
+  articleButton.textContent = "Click Here"
+
+
+  //add Class
+
+  
+  article.classList.add('article')
+  articleTitle.classList.add('article')
+  paraDate.classList.add('date')
+  articleButton.classList.add('expandButton')
+ 
+
+
+
+
+  //Event Listener for Button
+
+
+articleButton.addEventListener('click', () => {
+
+  article.classList.toggle('article-open')
+
+})
+
+
+  return article
+
+
+
+}
+
+//Iterate the article elements and append them to the page
+
+const art = document.querySelector('.articles');
+
+  data.forEach(element => {
+    art.appendChild(somePanel(element));
+  })
+
+  
